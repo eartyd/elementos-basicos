@@ -1,40 +1,84 @@
+<!-- Fecha 14/02/2022, explicación HTML conceptos básicos -->
+
+<!-- Todos los archivos deben de tener el archivo doctype para señalar 
+    al navegador que es un archivo html. -->
+<!-- Puede darse el caso de que las etiquetas tengan atributos y esos atirbutos pueden tener valores. -->
 <!doctype html>
+<!-- Indica el lenguaje que utilizará este html -->
 <html lang="es">
+    <!-- Sirve para que dar información al navegador sobre nuestra pagina web -->
     <head>
+        <!-- Estamos diciendo que nuestra web esta escrita con caracteres latinos,
+             meta es metainformación "más allá de la información" -->
         <meta charset="utf-8">
+        <!-- Hay que poner siempre esta línea para que la web se pueda lanzar en todas las pantallas
+        existentes, escalable -->
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <!-- Es un "favicon" la peuqeña imagen que se proyectará al lado de la web
+        El atributo href escribimos el enlace o lugar dentro de nuestras carpetas,
+        pugiede ser un enlace a la carpeta o un enlace a internet.Resolución 32x32 -->
 		<link rel="shortcut icon" href="https://www.youtube.com/s/desktop/12d6b690/img/favicon.ico">
-
+        
+        <!-- Es el título, lo que aparecerá al principio de la pestaña y aparecerá en Google
+        Esta etiqueta es muy importante -->
 		<title>Título</title>
+        <!-- La descripción es lo que sale debajo del enlace de Google 60 carcateres título
+        y 160 en la descripción. -->
 		<meta name="description" content="descripción de la web, se recomienda 90 caracteres">
+        <!-- Palabras claves que identificaran nuestra pagina web, las separamos con comas -->
         <meta name="keywords" 	 content="palabras clave, separadas, por comas">
-
+        
+        <!-- Estamos enlazando el archivo html con el css y decimos donde esta ubicado
+        Primero la ubicación del archivo -->
         <link href="style/normalize.css" rel="stylesheet">
         <link href="style/main.css" rel="stylesheet">
+    <!-- Cierra la etiqueta /head -->
     </head>
-    
+
+    <!-- Empieza etiqueda body, es lo que aparecerá en la pantalla -->
     <body>
+        <!-- Cabezera de la web, suele ser el logo un menu y un titulo
+        header es una caja y dentro de esa caja tenemos dos cajas.
+        header es equivalente a escribir <div header/> una se llama logo y otra div
+        Todo dentro de una web debe estar dentro de la caja -->
         <header>
+            <!-- El atributo class sirve para dar un nombre al valor del atributo
+            Se suele meter únicamente un elemento dentro de div (cajas)
+            Existen 2 formas de dar nombre, class para dar nombre a más de un elemento 
+             id para algo que solo se repite una vez, no pude haber 2 ids en el código y se suele
+            utilizar para el javascript, también relaciona la id para que "sucedan cosas"
+            pej: toco un botón y es botón pasaran cosas únicas que tendrán una interacción concreta. -->
             <div class="logo">
+                <!-- Formato bidimensional para las imagenes, vectoriales.
+                Todo lo que no sea una foto tiene que ser en svg -->
                 <svg viewbox="0 0 24 24">
+
                     <path d="M18.36,2.64C20,2.64 21.36,4 21.36,5.64C21.36,7.29 20,8.64 18.36,8.64C16.71,8.64 15.36,7.29 15.36,5.64C15.36,5.34 15.41,5.06 15.5,4.8C14.43,4.29 13.25,4 12,4A8,8 0 0,0 4,12L4.04,12.84L2.05,13.05L2,12A10,10 0 0,1 12,2C13.69,2 15.28,2.42 16.67,3.16C17.16,2.83 17.74,2.64 18.36,2.64M18.36,4.64A1,1 0 0,0 17.36,5.64A1,1 0 0,0 18.36,6.64C18.92,6.64 19.36,6.19 19.36,5.64C19.36,5.08 18.92,4.64 18.36,4.64M5.64,15.36C7.29,15.36 8.64,16.71 8.64,18.36C8.64,18.66 8.59,18.94 8.5,19.2C9.57,19.71 10.75,20 12,20A8,8 0 0,0 20,12L19.96,11.16L21.95,10.95L22,12A10,10 0 0,1 12,22C10.31,22 8.72,21.58 7.33,20.84C6.84,21.17 6.26,21.36 5.64,21.36C4,21.36 2.64,20 2.64,18.36C2.64,16.71 4,15.36 5.64,15.36M5.64,17.36C5.08,17.36 4.64,17.81 4.64,18.36C4.64,18.92 5.08,19.36 5.64,19.36A1,1 0 0,0 6.64,18.36A1,1 0 0,0 5.64,17.36M12,8A4,4 0 0,1 16,12A4,4 0 0,1 12,16A4,4 0 0,1 8,12A4,4 0 0,1 12,8Z" />
                 </svg>
             </div>
 
             <div class="title">
+                <!-- h1 significa el título, sería el encabezado, el h1 será el más importante
+                desde el h1 hasta el h6 y van de mas a menos importante -->
                 <h1>Título</h1>
             </div>
         </header>
-
+<!-- el main es la parte central de tu pagina web -->
         <main>
             <div class="subtitle">
+                <!-- Se utiliza para nombrar a las secciones o categorías de producto -->
                 <h2>Subtítulo</h2>
             </div>
-
+            <!-- El crud es la base de datos.CRUD(Create, Read, Update, Delete) -->
             <div class="crud">
+                <!-- Una caja -->
                 <div class="crud__table">
                     <div class="crud__table-grid">
                         <div class="crud__table-grid-element">
+                            <!-- img se utilizaría solo para fotos webp o jpg2000
+                            el atributo src diremos donde se encuentra la foto
+                        el alt sirve para cuando no carga la imagen le estamos diciendo a google
+                    de que va la imagen -->
                             <img src="images/1.jpg" alt="ardillas">
                         </div>
 
@@ -56,6 +100,8 @@
                     </div>
     
                     <div class="crud__table-flex">
+                        <!-- Otra caja 
+                        Lo que hace flex es proporcinar los espacios-->
                         <div class="crud__table-flex-element">
                             <img src="images/1.jpg" alt="ardillas">
                         </div>
@@ -79,6 +125,9 @@
                 </div>
     
                 <div class="crud__form">
+                    <!-- La etiqueta form es para un formulario y a su vez los formularios
+                    estan formados por la etiqueta label, nombre de la caja donde metemos datos 
+                 todo formulario tiene input y label-->
                     <form class="crud__admin-form" id="crud__user-form" action="/users/create" autocomplete="off"> 
                         <div class="crud__form-element">
                             <div class="crud__form-label">
@@ -86,33 +135,45 @@
                             </div>
 
                             <div class="crud__form-input">
+                                <!-- Input es insertar los datos, cada input tiene un label
+                                siempre van juntas  -->
                                 <input type="text" name="name">
                             </div>
                         </div>
 
                         <div class="crud__form-element">
+                            <!-- La etiqueta button se emplea para crear un botón  -->
                             <button class="crud__store-button">Guardar</button>
                         </div>
                     </form>
                 </div>
             </div> 
         </main>
-
+           <!--La parte de abajo de la web se llama footer  -->
         <footer>
+
             <div class="footer-element copyright">
+                <!-- Para escribir un texto normal -->
                 <p>@2048</p>
             </div>
             <div class="footer-element author">
+                <!-- Esta etiqueta se utiliza para enlazar: <a> de enlace
+                donde cierra la etiqueta /a es donde acaba de enlazar -->
                 <a href="https://thispersondoesnotexist.com/"><p>enlace a una web de verdad</p></a>
             </div>
         </footer>
-            
+            <!-- El script es el javascript, al igual que el css tiene que estar
+            enlazado, el js también. Dará interacción al html -->
         <script src="js/main.js"></script>
 
+        <!--Aquí estamos descargando una libreria que nos permit cargar las fuentes tipograficas
+        de Google.  -->
         <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
         <script>
+            // Aquí elegimos la fuente que queramos en families,las 2 primeras para el titulo
+            // y la siguiente para la fuente normal.
             WebFont.load({
-                google: {
+                  google:{
                     families: ['Ubuntu:700,700i', 'Ubuntu+Condensed:400']
                 }
             });        
@@ -120,3 +181,6 @@
 
     </body>
 </html>
+<!-- <ul> para crear listas y <li> es cada punto -->
+<!-- ol es que aparezcan números -->
+<!-- <video> para insertar video -->
